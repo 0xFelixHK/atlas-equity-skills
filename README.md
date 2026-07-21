@@ -88,7 +88,3 @@ skills/<name>/
 ```bash
 python3 scripts/validate_skills.py
 ```
-
-## 许可与来源
-
-本项目保留上游项目的 MIT 许可要求；衍生关系和修改范围见 [NOTICE.md](NOTICE.md)。
