@@ -1,4 +1,16 @@
-下面是一份可直接整理成 **SKILL.md / 自定义 Skill / 投研 Agent SOP** 的版本。
+# Atlas Equity Memo 详细框架
+
+> Supporting notes only. The safety, source, uncertainty, and output rules in `../SKILL.md` take precedence over this reference.
+
+## 导航
+
+- 目标、触发方式与输入参数
+- 九步研究工作流
+- 三情景分析、风险与催化剂
+- 数据来源规范
+- 标准输出结构与行业变量库
+
+以下内容提供买方研究备忘录的详细清单与模板。
 
 ---
 
@@ -126,7 +138,7 @@ ticker：股票代码
 
 ```text
 投资评级倾向：Buy / Hold / Sell / Avoid / Watchlist
-核心判断：一句话说明为什么值得买、持有、回避或做空
+核心判断：一句话说明研究评级偏向及其证据，不转化为个性化交易指令
 12个月目标价区间：Base / Bull / Bear
 隐含收益空间：相对当前股价
 关键变量：推动股价重估或下修的最重要因素

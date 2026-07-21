@@ -1,6 +1,6 @@
 # Atlas Alpha Framework
 
-This reference preserves the source framework from `a.md` in compact form.
+Supporting notes only. The safety, source, uncertainty, and output rules in `../SKILL.md` take precedence over this reference.
 
 ## Essence
 

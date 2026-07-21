@@ -1,4 +1,16 @@
-下面是可直接整理成 **Skill** 的版本。你之后只需要输入：
+# Atlas Market Health 详细框架
+
+> Supporting notes only. The safety, source, formula-guard, uncertainty, and output rules in `../SKILL.md` take precedence over this reference.
+
+## 导航
+
+- 必须获取的数据
+- 基本面与均线速度计算
+- 匹配、背离与 Escape Ratio
+- 模块评分与最终分数
+- 输出模板与简化口令
+
+以下是详细评分参考。典型输入包括：
 
 > `GF-DMA 评分 MU.US`
 > `GF-DMA 评分 NVDA.US`
@@ -127,15 +139,21 @@ G_f = 0.35G_{Revenue}+0.25G_{Gross\ Profit}+0.30G_{EPS}+0.10G_{Revision}
 
 | 指标                  | 计算方式                       |
 | ------------------- | -------------------------- |
-| (G_{Revenue})       | 下一季度营收指引 / 最新季度营收 - 1      |
-| (G_{Gross\ Profit}) | 下一季度毛利润 / 最新季度毛利润 - 1      |
-| (G_{EPS})           | 下一季度 EPS 指引 / 最新季度 EPS - 1 |
+| (G_{Revenue})       | 下一季度营收指引中值 / 上年同期营收 - 1      |
+| (G_{Gross\ Profit}) | 下一季度毛利润中值 / 上年同期毛利润 - 1      |
+| (G_{EPS})           | 下一季度稀释 EPS 指引中值 / 上年同期稀释 EPS - 1；零、负数或跨零时不计算 |
 | (G_{Revision})      | 过去 30 天一致预期上修幅度            |
 
-如果缺少毛利润或 EPS 数据，则使用简化版：
+如果缺少毛利润但 EPS 和预期修正可用，则使用：
 
 [
-G_f = 0.5G_{Revenue}+0.5G_{EPS}
+G_f = 0.45G_{Revenue}+0.40G_{EPS}+0.15G_{Revision}
+]
+
+如果 EPS 不可用但毛利润和预期修正可用，则使用：
+
+[
+G_f = 0.50G_{Revenue}+0.35G_{Gross\ Profit}+0.15G_{Revision}
 ]
 
 如果只拿得到营收指引，则使用最简版：
@@ -143,6 +161,8 @@ G_f = 0.5G_{Revenue}+0.5G_{EPS}
 [
 G_f = G_{Revenue}
 ]
+
+此时只输出低置信度部分结果，不给完整健康度总分。
 
 ---
 
@@ -345,7 +365,7 @@ RevisionScore
 总分 0-100。
 
 [
-HealthScore = 40S_{GrowthMatch}+25S_{Divergence}+20S_{Parallel}+15S_{Revision}
+HealthScore = 0.40*S_{GrowthMatch}+0.25*S_{Divergence}+0.20*S_{Parallel}+0.15*S_{Revision}
 ]
 
 权重：

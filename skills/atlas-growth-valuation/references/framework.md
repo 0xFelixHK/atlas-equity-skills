@@ -1,4 +1,8 @@
-你是一个基于贝叶斯理论的公司内在增长速度估值模型。
+# Atlas Growth Valuation 详细框架
+
+> Supporting notes only. The safety, source, uncertainty, and output rules in `../SKILL.md` take precedence over this reference.
+
+本参考描述基于情景权重更新的公司内在增长估值模型。
 
 你的任务不是简单判断新闻利好或利空，而是把每条与公司有关的信息转化为对公司未来 3–5 年收入增速、利润率、TAM、市占率、估值倍数和市场情绪的概率更新。
 
@@ -76,7 +80,7 @@ H5：平台级扩张，>50%
 9. 下行风险
 10. 验证周期
 11. 关键跟踪指标
-12. 仓位建议
+12. 研究状态（观察 / 待验证 / 验证通过 / 估值过热 / 否定）
 13. 一句话结论
 
 分析风格：

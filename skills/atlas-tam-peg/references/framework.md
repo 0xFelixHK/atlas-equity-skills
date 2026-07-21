@@ -1,4 +1,16 @@
-可以，把 **TAM-Adj-PEG** 总结成一个可复用的股票分析 skill。
+# Atlas TAM-Adj-PEG 详细框架
+
+> Supporting notes only. The safety, source, formula-guard, sensitivity, uncertainty, and output rules in `../SKILL.md` take precedence over this reference.
+
+## 导航
+
+- 核心公式与输入项
+- TAM Runway Factor
+- Quality Factor
+- 结果解释与特殊公司处理
+- 标准输出模板
+
+以下内容详细说明 TAM-Adj-PEG 研究框架。
 
 # TAM-Adj-PEG Skill
 
@@ -104,8 +116,9 @@ TAM\ Runway\ Factor = \sqrt{\frac{Growth\ Duration}{5}}
 |        0.7-0.9 | 高增长但竞争激烈、利润率不稳定     |
 |        0.9-1.1 | 正常优质成长股             |
 |        1.1-1.3 | 强壁垒、强定价权、客户粘性高      |
-|        1.3-1.5 | 垄断型、平台型、生态型资产       |
-|           1.5+ | 极少数超级平台或 AI 时代瓶颈资产，谨慎使用 |
+|        1.3-1.5 | 极少数垄断型、平台型、生态型或瓶颈资产；需要异常充分的证据 |
+
+默认上限为 1.5；高于 1.3 必须公开壁垒、定价权、再投资回报、稀释、客户集中和替代风险证据。
 
 ## Quality Factor 主要看 9 个问题
 
@@ -285,20 +298,20 @@ TAM-Adj-PEG = Forward PE / (EPS CAGR × TAM Runway Factor × Quality Factor)
 - 估值档位：
 - 主要上行驱动：
 - 主要下行风险：
-- 适合的仓位类型：
+- 研究类别与跟踪方式：
 ```
 
 ---
 
-# 九、仓位解释框架
+# 九、研究类别解释框架
 
-| 类型         | TAM-PEG 特征                | 仓位方式          |
+| 类型         | TAM-PEG 特征                | 研究方式          |
 | ---------- | ------------------------- | ------------- |
-| 核心复利仓      | TAM-PEG 0.5-1.2，Quality 高 | 可作为长期核心仓      |
-| 高 beta 成长仓 | TAM-PEG 0.8-1.5，增速高但波动大   | 中等仓位，跟踪业绩     |
-| 反转仓        | 当前 TAM-PEG 高，成功后下降        | 小到中仓位，看里程碑    |
-| 期权仓        | PE/PEG 失真，TAM 大但兑现早       | 小仓位，允许归零/多倍   |
-| 周期仓        | PEG 很低但 Quality 打折        | 看供需周期，不长期线性外推 |
+| 核心复利型      | TAM-PEG 0.5-1.2，Quality 高 | 长周期跟踪复利质量      |
+| 高 beta 成长型 | TAM-PEG 0.8-1.5，增速高但波动大   | 跟踪业绩与估值敏感性     |
+| 反转型        | 当前 TAM-PEG 高，成功后下降        | 观察关键里程碑    |
+| 期权型        | PE/PEG 失真，TAM 大但兑现早       | 标记高失败概率与融资风险   |
+| 周期型        | PEG 很低但 Quality 打折        | 看供需周期，不长期线性外推 |
 
 ---
 

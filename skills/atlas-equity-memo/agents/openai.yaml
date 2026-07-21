@@ -1,4 +1,4 @@
 interface:
   display_name: "Buy-Side Equity Research Memo"
   short_description: "Generate source-backed buy-side stock memos"
-  default_prompt: "Use $atlas-equity-memo to analyze this ticker with an investment view, SEC-backed financials, valuation scenarios, catalysts, risks, Atlas cross-checks, and 2-4 adaptive Mermaid visualizations."
+  default_prompt: "Use $atlas-equity-memo to analyze this ticker with sourced financials, reproducible valuation scenarios, catalysts, risks, and relevant Atlas cross-checks."
