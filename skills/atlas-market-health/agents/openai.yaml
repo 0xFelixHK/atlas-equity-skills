@@ -1,0 +1,4 @@
+interface:
+  display_name: "GF-DMA Health Index"
+  short_description: "Score valuation health with GF-DMA"
+  default_prompt: "Use $atlas-market-health to score a ticker with latest fundamentals, DMA trend speed, price-DMA divergence, escape ratio, estimate revisions, and 2-4 adaptive Mermaid visualizations."
